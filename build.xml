@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Rubus" default="dist" basedir=".">
+    <description>Builds and packages Rubus.</description>
+
+    <!-- Build Properties -->
+    <property name="src"       location="src" />
+    <property name="build"     location="bin" />
+    <property name="dist"      location="dist" />
+    <property name="mainclass" value="rubus.Rubus" />
+    <path id="classpath">
+        <fileset dir="libs">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build}" />
+    </target>
+
+    <target name="compile" depends="init" description="Compile">
+        <javac srcdir="${src}/java" destdir="${build}" debug="true">
+            <classpath refid="classpath" />
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile" description="Generate the distribution">
+        <mkdir dir="${dist}/libs" />
+
+        <pathconvert property="mf.classpath" pathsep=" ">
+            <path refid="classpath" />
+            <mapper>
+                <chainedmapper>
+                    <flattenmapper />
+                    <globmapper from="*.jar" to="libs/*.jar" />
+                </chainedmapper>
+            </mapper>
+        </pathconvert>
+
+        <jar jarfile="${dist}/Rubus.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="${mainclass}" />
+                <attribute name="Class-Path" value=". ${mf.classpath}" />
+            </manifest>
+        	<!-- <zipgroupfileset dir="libs" /> -->
+        </jar>
+     
+        <copy todir="${dist}/libs">
+            <fileset dir="libs" includes="*.jar" />
+        </copy>
+    </target>
+
+    <target name="clean" description="Clean up">
+        <delete dir="${build}" />
+        <delete dir="${dist}" />
+    </target>
+</project>
