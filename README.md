@@ -1,5 +1,13 @@
 **Rubus: A compiler for seamless and extensible parallelism**
 
+**Journal**
+
+*PLOS ONE* https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188721
+
+**Abstract**
+
+Nowadays, a typical processor may have multiple processing cores on a single chip. Furthermore, a special purpose processing unit called Graphic Processing Unit (GPU), originally designed for 2D/3D games, is now available for general purpose use in computers and mobile devices. However, the traditional programming languages which were designed to work with machines having single core CPUs, cannot utilize the parallelism available on multi-core processors efficiently. Therefore, to exploit the extraordinary processing power of multi-core processors, researchers are working on new tools and techniques to facilitate parallel programming. To this end, languages like CUDA and OpenCL have been introduced, which can be used to write code with parallelism. The main shortcoming of these languages is that programmer needs to specify all the complex details manually in order to parallelize the code across multiple cores. Therefore, the code written in these languages is difficult to understand, debug and maintain. Furthermore, to parallelize legacy code can require rewriting a significant portion of code in CUDA or OpenCL, which can consume significant time and resources. Thus, the amount of parallelism achieved is proportional to the skills of the programmer and the time spent in code optimizations. This paper proposes a new open source compiler, Rubus, to achieve seamless parallelism. The Rubus compiler relieves the programmer from manually specifying the low-level details. It analyses and transforms a sequential program into a parallel program automatically, without any user intervention. This achieves massive speedup and better utilization of the underlying hardware without a programmer’s expertise in parallel programming. For five different benchmarks, on average a speedup of 34.54 times has been achieved by Rubus as compared to Java on a basic GPU having only 96 cores. Whereas, for a matrix multiplication benchmark the average execution speedup of 84 times has been achieved by Rubus on the same GPU. Moreover, Rubus achieves this performance without drastically increasing the memory footprint of a program.
+
 **Prerequisites**
 
 **Download and install the following software.**
