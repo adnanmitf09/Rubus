@@ -38,7 +38,7 @@ build.xml # Ant build script
 
 ## How to use Rubus:
 
-Rubus is compiled into a single Jar file in dest folder using build.xml. Rubus can be used from command line or with GUI interface.
+Once code is compiled into a single Jar file, it may be used from command line or with GUI.
 
 ## Command Line interface:
 
