@@ -30,11 +30,11 @@ build.xml # Ant build script
 
 ## How to build:
 
-1. Extract rubus.zip to some directory.
+1. Extract **rubus.zip** to some directory.
 2. Open Terminal app (linux/mac) or Command Prompt in Windows
-3. Navigate to the rubus folder (having build.xml file)
+3. Navigate to the **rubus** folder (having build.xml file)
 4. Type **ant** and press enter. Make sure that apache ant is already in your system path and accessible by terminal / command prompt
-5. Build process will be started and Rubus.jar will be generated in **&quot;dist&quot;** folder and dependent lib folder will also be copied there.
+5. Build process will be started and **Rubus.jar** will be generated in **dist** folder and dependent lib folder will also be copied there.
 
 ## How to use Rubus:
 
@@ -44,13 +44,13 @@ Rubus is compiled into a single Jar file in dest folder using build.xml. Rubus c
 
 The command line interface has a number of optional arguments.
 
-Syntax:
+**Syntax:**
 
 ## java Rubus [options...] arguments...
 
 Arguments contains input files and destination dir.
 
-Example:
+**Example:**
 
 java Rubus --dist \&lt;Output Dir\&gt; -auto -clean -debug -export -manual -open -path \&lt;Input Files\&gt;
 
